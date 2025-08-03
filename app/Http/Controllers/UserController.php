@@ -12,9 +12,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $users = User::paginate(10); 
 
+        return view('users.users')->with('users', $users);
+    }
     /**
      * Show the form for creating a new resource.
      */
